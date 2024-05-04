@@ -10,6 +10,9 @@ public class ValidationClass {
 		return a <= 0 || b <= 0;						  //junto as outras informadas no MatUtilities;
 	}
 	
+	public static boolean BiggerZero(double a) {
+		return a <= 0;						  
+	}
 	public static boolean BbiggerthanHundred(double val) {
 		return val>100;
 	}

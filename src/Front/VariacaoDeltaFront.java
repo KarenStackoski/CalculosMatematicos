@@ -66,8 +66,12 @@ public class VariacaoDeltaFront extends JFrame {
 				if (ValidationClass.BbiggherthanA(valorA, valorB)) {
 					JOptionPane.showMessageDialog(null, "Valor final não pode ser maior que o inicial");
 				}
-
-				if (ValidationClass.BbiggherthanA(valorA, valorB) == false) {
+				
+				if (ValidationClass.BiggerZero(valorA)) {
+					JOptionPane.showMessageDialog(null, "Valor de A não pode ser 0");
+				}
+				
+				if (ValidationClass.BbiggherthanA(valorA, valorB) == false && ValidationClass.BiggerZero(valorA) == false) {
 					double resultado = MatUtilities.DeltaVariation(valorA, valorB);
 
 					// Definindo o formato para duas casas decimais
