@@ -60,15 +60,18 @@ public class DescontoABFront extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//Transforma o valor de string em double
+				// Transforma o valor de string em double
 				double valorA = Double.parseDouble(txtValorA.getText());
 				double valorB = Double.parseDouble(txtValorB.getText());
 
 				if (ValidationClass.BbiggherthanA(valorA, valorB)) {
 					JOptionPane.showMessageDialog(null, "Valor com desconto não pode ser maior que o original");
 				}
-
-				if (ValidationClass.BbiggherthanA(valorA, valorB) == false) {
+				if (ValidationClass.BiggerZero(valorA)) {
+					JOptionPane.showMessageDialog(null, "Valor de A não pode ser 0");
+				}
+				if (ValidationClass.BbiggherthanA(valorA, valorB) == false
+						&& ValidationClass.BiggerZero(valorA) == false) {
 					double resultado = MatUtilities.ValueDiscWas(valorA, valorB);
 
 					// Definindo o formato para duas casas decimais
